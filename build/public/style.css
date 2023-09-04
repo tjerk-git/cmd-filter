@@ -1,5 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* all sizes are relative to 16px */
+
+html {
+  font-size: 62.5%;
+  /* is 16px, 100/16 = 62.5 10/16 */
+}
+
+body {
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+
 .teachers{
 
+}
+
+.teacher{
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+
+  &:not(:last-child){
+    margin-right: 3rem;
+  }
 }
 
 .teacher__tags{
@@ -11,14 +41,21 @@
 
 .teacher__tags-tag{
   display: inline-block;
-  margin: 5px;
-  padding: 5px 10px;
+  margin: 1rem;
+  padding: 1rem 2rem;
   background-color: #FFF;
   color: #black;
-  border:2px solid black;
+  border:0.2rem solid black;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 .teacher__tags-tag.selected{
   background-color: #007bff;
+}
+
+.teacher__image{
+  border-radius: 50%;
+  width: 10rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15);
 }

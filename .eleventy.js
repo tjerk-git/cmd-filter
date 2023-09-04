@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
     "css",
   ]);
   eleventyConfig.addPassthroughCopy("public");
+  eleventyConfig.addPassthroughCopy("public/images");
 
   eleventyConfig.addPassthroughCopy("bundle.js");
 

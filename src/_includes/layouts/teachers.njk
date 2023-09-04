@@ -19,7 +19,9 @@ layout: layouts/base.njk
 
     {%- for teacher in collections.teachers -%}
       <div class="teacher" data-tags={{teacher.data.tags}}>
-        <a href='{{ teacher.url }}'>{{ teacher.data.name }}</a>
+        <a href='{{ teacher.url }}'>
+          <img class="teacher__image" src="public/images/{{teacher.data.image}}.avif" alt="{{teacher.data.name}}">
+        </a>
       </div>  
     {%- endfor -%}
 </section>
