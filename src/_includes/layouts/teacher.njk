@@ -1,0 +1,30 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-home
+---
+
+{# This is the template for individual blog posts–it builds the front matter properties into the page #}
+
+<div class="wrapper post">
+  <div>
+    {# The post front matter includes the title property #}
+    <h1 class='teacher__name'>{{name}}</h1>
+    
+    {{ content | safe }}
+    <div class="teacher__controls">
+
+    {% if prevPost.url %}
+      <p>
+        <strong>Previous person</strong>: 
+        <a class="teacher__controls-previous" href="{{ prevPost.url }}">{{ prevPost.data.name }}</a>
+      </p>
+    {% endif %}
+    {% if nextPost.url %}
+      <p>
+        <strong>Next person</strong>: 
+        <a class="teacher__controls-next" href="{{ nextPost.url }}">{{ nextPost.data.name }}</a>
+      </p>
+    {% endif %}
+    </div>
+  </div>
+</div>

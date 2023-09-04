@@ -1,0 +1,24 @@
+.teachers{
+
+}
+
+.teacher__tags{
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.teacher__tags-tag{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #FFF;
+  color: #black;
+  border:2px solid black;
+  cursor: pointer;
+}
+
+.teacher__tags-tag.selected{
+  background-color: #007bff;
+}
