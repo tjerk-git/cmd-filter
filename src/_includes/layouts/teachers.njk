@@ -2,28 +2,29 @@
 layout: layouts/base.njk
 ---
 
-
 <section class="teachers">
     {{ content | safe }}
 
-    <ul class="teacher__tags">
-        <li class="teacher__tags-tag" data-tag="coding">Coding</li>
-        <li class="teacher__tags-tag" data-tag="video">Video</li>
-        <li class="teacher__tags-tag" data-tag="motion">Motion</li>
-        <li class="teacher__tags-tag" data-tag="game">Game</li>
-        <li class="teacher__tags-tag" data-tag="photography">Photography</li>
-        <li class="teacher__tags-tag" data-tag="copy">Copy</li>
-        <li class="teacher__tags-tag" data-tag="story">Story</li>
-    </ul>
-
-
-    {%- for teacher in collections.teachers -%}
-      <div class="teacher" data-tags={{teacher.data.tags}}>
+    <div class="row">
+      <ul class="teacher__tags">
+          <li class="teacher__tags-tag" data-tag="coding">Coding</li>
+          <li class="teacher__tags-tag" data-tag="video">Video</li>
+          <li class="teacher__tags-tag" data-tag="motion">Motion</li>
+          <li class="teacher__tags-tag" data-tag="game">Game</li>
+          <li class="teacher__tags-tag" data-tag="photography">Photography</li>
+          <li class="teacher__tags-tag" data-tag="copy">Copy</li>
+          <li class="teacher__tags-tag" data-tag="story">Story</li>
+      </ul>
+    </div>
+    <div class="row">
+      {%- for teacher in collections.teachers -%}
+        <div class="teacher" data-tags={{teacher.data.tags}}>
         <a href='{{ teacher.url }}'>
           <img class="teacher__image" src="public/images/{{teacher.data.image}}.avif" alt="{{teacher.data.name}}">
         </a>
-      </div>  
-    {%- endfor -%}
+        </div>  
+      {%- endfor -%}
+    </div>
 </section>
 
 <script src="/bundle.js"></script>

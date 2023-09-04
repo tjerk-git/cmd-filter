@@ -22,7 +22,7 @@ tags.forEach(tag => {
     posts.forEach(post => {
       const postTags = post.getAttribute('data-tags').split(',');
       const isVisible = Array.from(selectedTags).every(tag => postTags.includes(tag));
-      post.style.opacity = isVisible ? '1' : '0';
+      post.style.opacity = isVisible ? '1' : '0.2';
     });
   });
 });

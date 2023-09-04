@@ -8,7 +8,9 @@ layout: layouts/teacher.njk
 
 ---
 
+<section class="tags">
 {{tags}}
+</section>
 
 
 {%- set relatedPosts = collections.all | filterByTags(tags) | excludeFromCollection(page.url) -%}
