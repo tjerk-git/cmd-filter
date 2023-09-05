@@ -11,9 +11,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("bundle.js");
 
-  eleventyConfig.addNunjucksFilter("excludeFromCollection", function (collection = [], pageUrl = this.ctx.page.url) {
-    return collection.filter(post => post.url !== pageUrl);
-  });
+  // eleventyConfig.addNunjucksFilter("excludeFromCollection", function (collection = [], pageUrl = this.ctx.page.url) {
+  //   return collection.filter(post => post.url !== pageUrl);
+  // });
 
   eleventyConfig.addFilter("filterByTags", function (collection = [], ...requiredTags) {
     return collection.filter(post => {
@@ -21,12 +21,12 @@ module.exports = function (eleventyConfig) {
     });
   });
 
-  eleventyConfig.addNunjucksFilter("related", function (collection = []) {
-    const { tags: requiredTags, page } = this.ctx;
-    return collection.filter(post => {
-      return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
-    });
-  });
+  // eleventyConfig.addNunjucksFilter("related", function (collection = []) {
+  //   const { tags: requiredTags, page } = this.ctx;
+  //   return collection.filter(post => {
+  //     return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
+  //   });
+  // });
 
   eleventyConfig.addCollection("teachers", function (collection) {
 

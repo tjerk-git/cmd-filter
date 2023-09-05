@@ -1,6 +1,5 @@
 const tags = document.querySelectorAll('.teacher__tags-tag');
 const teachers = document.querySelectorAll('.teacher');
-
 const selectedTags = new Set();
 
 teachers.forEach(teacher => {
@@ -20,7 +19,6 @@ tags.forEach(tag => {
   tag.addEventListener('click', () => {
     const selectedTag = tag.getAttribute('data-tag');
 
-
     if (selectedTags.has(selectedTag)) {
       selectedTags.delete(selectedTag);
       tag.classList.remove('selected');
@@ -29,13 +27,10 @@ tags.forEach(tag => {
       tag.classList.add('selected');
     }
 
-    // Filter posts based on selected tags
     teachers.forEach(teacher => {
-
 
       const postTags = teacher.getAttribute('data-tags').split(',');
       const isVisible = Array.from(selectedTags).every(tag => postTags.includes(tag));
-      //post.style.display = isVisible ? 'inline-block' : 'none';
 
       if (isVisible) {
         teacher.classList.remove('removing');
