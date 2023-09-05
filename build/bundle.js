@@ -1,9 +1,20 @@
 const tags = document.querySelectorAll('.teacher__tags-tag');
-const posts = document.querySelectorAll('.teacher');
-
+const teachers = document.querySelectorAll('.teacher');
 
 const selectedTags = new Set();
 
+teachers.forEach(teacher => {
+  teacher.addEventListener('click', () => {
+    if (teacher.classList.contains('highlighted')) {
+      teacher.classList.remove('highlighted');
+    } else {
+      teacher.classList.add('highlighted');
+    }
+
+    const teacherDescription = teacher.querySelector('.teacher__description');
+    teacherDescription.style.display = teacherDescription.style.display === 'block' ? 'none' : 'block';
+  })
+});
 
 tags.forEach(tag => {
   tag.addEventListener('click', () => {
@@ -19,10 +30,19 @@ tags.forEach(tag => {
     }
 
     // Filter posts based on selected tags
-    posts.forEach(post => {
-      const postTags = post.getAttribute('data-tags').split(',');
+    teachers.forEach(teacher => {
+
+
+      const postTags = teacher.getAttribute('data-tags').split(',');
       const isVisible = Array.from(selectedTags).every(tag => postTags.includes(tag));
-      post.style.opacity = isVisible ? '1' : '0.2';
+      //post.style.display = isVisible ? 'inline-block' : 'none';
+
+      if (isVisible) {
+        teacher.classList.remove('removing');
+      } else {
+        teacher.classList.add('removing');
+      }
+
     });
   });
 });

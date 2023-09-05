@@ -19,6 +19,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+.big-heading{
+  font-size: 10rem;
+}
+
 
 .row {
   max-width: 114rem;
@@ -71,12 +75,21 @@ body {
 
 .teacher{
   display: inline-block;
+  animation: fadeIn 500ms;
   transition: all 0.3s ease-in-out;
+  max-width: 30rem;
+  border-radius:20px;
+  padding: 2rem;
 
   &:not(:last-child){
     margin-right: 3rem;
   }
 }
+
+.highlighted{
+  border: 1rem solid black;
+}
+
 
 .teacher__tags{
   list-style: none;
@@ -87,6 +100,26 @@ body {
 
 .teacher__name{
   font-size: 5rem;
+}
+
+.teacher__description{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  float:right;
+  animation: fadeIn 500ms;
+  display:none;
+}
+
+.show{
+  display:block;
+}
+
+.teacher__tags{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
 }
 
 .tags{
@@ -133,3 +166,41 @@ body {
   }
 }
 
+.teacher.removing {
+    -webkit-animation: fadeOut 500ms;
+    -moz-animation: fadeOut 500ms;
+    animation: fadeOut 500ms;
+    display:none;
+}
+
+
+
+@-moz-keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@-moz-keyframes fadeOut {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
+@keyframes fadeOut {
+    from {opacity:1;}
+    to {opacity:0;}
+}

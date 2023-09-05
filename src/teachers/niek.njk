@@ -5,15 +5,11 @@ tags:
   - video
 image: niek_heegen
 layout: layouts/teacher.njk
-
+description: Niek heegen is teacher mainly in the first year who does lots of stuff with video and motion design.
 ---
 
-<section class="tags">
-{{tags}}
-</section>
 
-
-{%- set relatedPosts = collections.all | filterByTags(tags) | excludeFromCollection(page.url) -%}
+{# {%- set relatedPosts = collections.all | filterByTags(tags) | excludeFromCollection(page.url) -%}
 {% if relatedPosts.length %}
 <aside>
   <h1 data-tags="{{ tags | join(',') }}">Related people</h1>
@@ -23,4 +19,4 @@ layout: layouts/teacher.njk
     {%- endfor -%}
   </ul>
 </aside>
-{% endif %}
+{% endif %} #}
