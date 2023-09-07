@@ -10,7 +10,7 @@ layout: layouts/base.njk
 
     <div class="row">
       <ul class="teacher__tags">
-          <li class="teacher__tags-tag" data-tag="coding">Coding</li>
+          <li class="teacher__tags-tag" data-tag="coding">Coding </li>
           <li class="teacher__tags-tag" data-tag="video">Video</li>
           <li class="teacher__tags-tag" data-tag="motion">Motion</li>
           <li class="teacher__tags-tag" data-tag="game">Game</li>
@@ -24,9 +24,6 @@ layout: layouts/base.njk
         <div class="teacher" data-tags={{teacher.data.tags}}>
         {# <a href='{{ teacher.url }}'> #}
           <img class="teacher__image" src="public/images/{{teacher.data.image}}.avif" alt="{{teacher.data.name}}">
-          <p class="teacher__description">
-            {{teacher.data.description}}
-          </p>
         {# </a> #}
         </div>  
       {%- endfor -%}

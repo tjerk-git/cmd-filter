@@ -148,8 +148,13 @@ body {
   }
 }
 
-.teacher__tags-tag.selected{
+.selected{
   background-color: #007bff;
+
+  &::after{
+    content: '⊗';
+    display:inline-block;
+  }
 }
 
 .teacher__image{
