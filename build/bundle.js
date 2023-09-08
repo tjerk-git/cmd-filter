@@ -2,17 +2,18 @@ const tags = document.querySelectorAll('.teacher__tags-tag');
 const teachers = document.querySelectorAll('.teacher');
 const selectedTags = new Set();
 
-teachers.forEach(teacher => {
-  teacher.addEventListener('click', () => {
-    if (teacher.classList.contains('highlighted')) {
-      teacher.classList.remove('highlighted');
-    } else {
-      teacher.classList.add('highlighted');
-    }
+// Get a reference to the anchor element
+const anchor = document.getElementById("anchor");
 
-    const teacherDescription = teacher.querySelector('.teacher__description');
-    teacherDescription.style.display = teacherDescription.style.display === 'block' ? 'none' : 'block';
-  })
+// Add an event listener for the "Escape" key press
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    console.log("Escape key pressed");
+    // Prevent the default "Esc" behavior (e.g., closing a modal)
+    event.preventDefault();
+
+    window.location.hash = "#";
+  }
 });
 
 tags.forEach(tag => {
