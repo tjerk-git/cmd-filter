@@ -70,9 +70,6 @@ body {
 }
 
 
-.teachers{
-  
-}
 
 .teacher{
   display: inline-block;
@@ -81,11 +78,15 @@ body {
   max-width: 30rem;
   border-radius:10px;
   text-decoration:none;
-     margin-right: 2rem;
-    margin-bottom:1rem;
+  margin-right: 2rem;
+  margin-bottom:1rem;
 
   &:hover{
     transform: scale(1.1);
+  }
+
+  &(:last-child){
+    margin-right:0;
   }
 }
 
@@ -95,7 +96,6 @@ body {
   display: inline-block;
   padding: 0;
   text-align:center;
-  margin-bottom:2rem;
 }
 
 .u-align-center{
@@ -321,7 +321,20 @@ figcaption{
     width:100%;
   }
   .big-heading{
-    font-size: 2rem;
+    font-size: 2.3rem;
     margin-top:1rem;
   }
+
+  .teachers{
+    padding:1rem;
+  }
+
+  .teacher{
+    margin-right:1rem;
+  }
+
+  .teacher__tags-tag{
+    font-size: 1rem;
+  }
+
 }

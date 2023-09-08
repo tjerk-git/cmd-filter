@@ -28,21 +28,29 @@ module.exports = function (eleventyConfig) {
   //   });
   // });
 
-  eleventyConfig.addCollection("teachers", function (collection) {
 
-    const coll = collection
-      .getFilteredByTag("teachers");
-
-    for (let i = 0; i < coll.length; i++) {
-      const prevPost = coll[i - 1];
-      const nextPost = coll[i + 1];
-
-      coll[i].data["prevPost"] = prevPost;
-      coll[i].data["nextPost"] = nextPost;
-    }
-
-    return coll;
+  eleventyConfig.addCollection("byName", function (collectionApi) {
+    return collectionApi.getAll().sort(function (a, b) {
+      //return a.date - b.date; // sort by date - ascending
+      return b.name - a.name; // sort by date - descending
+    });
   });
+
+  // eleventyConfig.addCollection("teachers", function (collection) {
+
+  //   const coll = collection
+  //     .getFilteredByTag("teachers");
+
+  //   for (let i = 0; i < coll.length; i++) {
+  //     const prevPost = coll[i - 1];
+  //     const nextPost = coll[i + 1];
+
+  //     coll[i].data["prevPost"] = prevPost;
+  //     coll[i].data["nextPost"] = nextPost;
+  //   }
+
+  //   return coll;
+  // });
 
   return {
     dir: {

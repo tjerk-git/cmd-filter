@@ -1,12 +1,10 @@
 ---
 layout: layouts/base.njk
 ---
+    {{ content | safe }}
 <div class="row">
     <h1 class="big-heading">CMD LWD People</h1>
 </div>
-<section class="teachers">
-    
-    {{ content | safe }}
 
     <div class="row u-align-center">
       <ul class="teacher__tags">
@@ -23,16 +21,17 @@ layout: layouts/base.njk
           <li class="teacher__tags-tag" data-tag="research">Design research</li>
           <li class="teacher__tags-tag" data-tag="concept">Concept</li>
           <li class="teacher__tags-tag" data-tag="ppo">Personal development</li>
-          <li class="teacher__tags-tag" data-tag="project">Project management</li>
+          <li class="teacher__tags-tag" data-tag="project">Project</li>
       </ul>
     </div>
+<section class="teachers">
     <div class="row animated show">
-      {%- for teacher in collections.teachers -%}
-        <a href="#{{teacher.data.name}}"  class="teacher" data-tags={{teacher.data.tags}}>
+      {%- for teacher in collections.byName -%}
+        <a href="#{{teacher.data.slug}}"  class="teacher" data-tags={{teacher.data.tags}}>
           <img class="teacher__image" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
         </a>  
 
-      <div id="{{teacher.data.name}}" class="popup">
+      <div id="{{teacher.data.slug}}" class="popup">
         <div class="popup__content">
           <div class="popup__left">
             <img class="popup__img" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
