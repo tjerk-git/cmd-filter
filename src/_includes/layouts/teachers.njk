@@ -8,42 +8,46 @@ layout: layouts/base.njk
     
     {{ content | safe }}
 
-    <div class="row">
+    <div class="row u-align-center">
       <ul class="teacher__tags">
-          <li class="teacher__tags-tag" data-tag="coding">Coding </li>
+          <li class="teacher__tags-tag" data-tag="coding">Coding</li>
           <li class="teacher__tags-tag" data-tag="video">Video</li>
           <li class="teacher__tags-tag" data-tag="motion">Motion</li>
           <li class="teacher__tags-tag" data-tag="game">Game</li>
           <li class="teacher__tags-tag" data-tag="photography">Photography</li>
-          <li class="teacher__tags-tag" data-tag="copy">Copy</li>
-          <li class="teacher__tags-tag" data-tag="story">Story</li>
+          <li class="teacher__tags-tag" data-tag="content">Content</li>
+          <li class="teacher__tags-tag" data-tag="graphic">Graphic</li>
+          <li class="teacher__tags-tag" data-tag="brand">Brand</li>
+          <li class="teacher__tags-tag" data-tag="ux">User Experience</li>
+          <li class="teacher__tags-tag" data-tag="3d">3D</li>
+          <li class="teacher__tags-tag" data-tag="research">Design research</li>
+          <li class="teacher__tags-tag" data-tag="concept">Concept</li>
+          <li class="teacher__tags-tag" data-tag="ppo">Personal development</li>
+          <li class="teacher__tags-tag" data-tag="project">Project management</li>
       </ul>
     </div>
-    <div class="row animated">
+    <div class="row animated show">
       {%- for teacher in collections.teachers -%}
         <a href="#{{teacher.data.name}}"  class="teacher" data-tags={{teacher.data.tags}}>
-          <img class="teacher__image" src="public/images/{{teacher.data.image}}.avif" alt="{{teacher.data.name}}">
+          <img class="teacher__image" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
         </a>  
 
       <div id="{{teacher.data.name}}" class="popup">
         <div class="popup__content">
           <div class="popup__left">
-            <img class="popup__img" src="public/images/{{teacher.data.image}}.avif" alt="{{teacher.data.name}}">
+            <img class="popup__img" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
           </div>
           <div class="popup__right">
             <a href="#" class="popup__close">&times;</a>
             <h2 class="heading-secondary">{{teacher.data.name}}</h2>
             <p class="popup__text">
             {{teacher.data.description}}
-            {{teacher.data.tags}}
             </p>
-
-            <a href="#" class="btn btn--blue">Contact on Teams</a>
+      
+            <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a>
           </div>
         </div>
       </div>
-
-
       {%- endfor -%}
     </div>
 </section>

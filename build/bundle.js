@@ -8,8 +8,7 @@ const anchor = document.getElementById("anchor");
 // Add an event listener for the "Escape" key press
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
-    console.log("Escape key pressed");
-    // Prevent the default "Esc" behavior (e.g., closing a modal)
+
     event.preventDefault();
 
     window.location.hash = "#";
