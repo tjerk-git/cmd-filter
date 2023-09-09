@@ -1,5 +1,5 @@
 const tags = document.querySelectorAll('.teacher__tags-tag');
-const teachers = document.querySelectorAll('.teacher');
+const teachers = document.querySelectorAll('.card');
 const selectedTags = new Set();
 
 // Get a reference to the anchor element

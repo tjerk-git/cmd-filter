@@ -1,7 +1,6 @@
 ---
 layout: layouts/base.njk
 ---
-    {{ content | safe }}
 <div class="row">
     <h1 class="big-heading">CMD LWD People</h1>
 </div>
@@ -10,6 +9,7 @@ layout: layouts/base.njk
       <ul class="teacher__tags">
           <li class="teacher__tags-tag" data-tag="coding">Coding</li>
           <li class="teacher__tags-tag" data-tag="video">Video</li>
+          <li class="teacher__tags-tag" data-tag="audio">Audio</li>
           <li class="teacher__tags-tag" data-tag="motion">Motion</li>
           <li class="teacher__tags-tag" data-tag="game">Game</li>
           <li class="teacher__tags-tag" data-tag="photography">Photography</li>
@@ -21,36 +21,35 @@ layout: layouts/base.njk
           <li class="teacher__tags-tag" data-tag="research">Design research</li>
           <li class="teacher__tags-tag" data-tag="concept">Concept</li>
           <li class="teacher__tags-tag" data-tag="ppo">Personal development</li>
-          <li class="teacher__tags-tag" data-tag="project">Project</li>
+          <li class="teacher__tags-tag" data-tag="project">Stategy</li>
       </ul>
     </div>
 <section class="teachers">
-    <div class="row animated show">
-      {%- for teacher in collections.byName -%}
-        <a href="#{{teacher.data.slug}}"  class="teacher" data-tags={{teacher.data.tags}}>
-          <img class="teacher__image" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
-        </a>  
-
-      <div id="{{teacher.data.slug}}" class="popup">
-        <div class="popup__content">
-          <div class="popup__left">
-            <img class="popup__img" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
-          </div>
-          <div class="popup__right">
-            <a href="#" class="popup__close">&times;</a>
-            <h2 class="heading-secondary">{{teacher.data.name}}</h2>
-            <p class="popup__text">
-            {{teacher.data.description}}
-            </p>
-      
-            <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a>
-          </div>
-        </div>
-      </div>
-      {%- endfor -%}
+  {%- for teacher in collections.byName -%}
+    <div class="card" data-tags={{teacher.data.tags}}>
+      <img style="width:100%" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
+      <h2 class="heading-secondary">{{teacher.data.name}}</h2>
+      <p><a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a></p>
     </div>
+  {%- endfor -%}
 </section>
 
 
+  {# <div id="{{teacher.data.slug}}" class="popup">
+    <div class="popup__content">
+      <div class="popup__left">
+        <img class="popup__img" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
+      </div>
+      <div class="popup__right">
+        <a href="#" class="popup__close">&times;</a>
+        <h2 class="heading-secondary">{{teacher.data.name}}</h2>
+        <p class="popup__text">
+        {{teacher.data.description}}
+        </p>
+
+        <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a>
+      </div>
+    </div>
+  </div> #}
 
 <script src="/bundle.js"></script>

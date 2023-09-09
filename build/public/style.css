@@ -69,10 +69,15 @@ body {
   }
 }
 
-
+.teachers{
+  max-width: 114rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  gap: 2rem;
+  margin:0 auto;
+}
 
 .teacher{
-  display: inline-block;
   animation: fadeIn 500ms;
   transition: all 0.3s ease-in-out;
   max-width: 30rem;
@@ -88,6 +93,26 @@ body {
   &(:last-child){
     margin-right:0;
   }
+}
+
+.card {
+  box-shadow: 0 0.4rem 8rem 0 rgba(0, 0, 0, 0.2);
+  max-width: 26rem;
+  max-height: 46rem;
+  margin: auto;
+  text-align: center;
+  border-radius:1.5rem;
+  overflow:hidden;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 500ms;
+
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
+.title {
+  font-size: 1rem;
 }
 
 
@@ -169,7 +194,7 @@ body {
   }
 }
 
-.teacher.removing {
+.card.removing {
     -webkit-animation: fadeOut 500ms;
     -moz-animation: fadeOut 500ms;
     animation: fadeOut 500ms;
@@ -224,10 +249,10 @@ body {
 }
 
 .heading-secondary{
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   display: inline-block;
-  margin-bottom:2rem;
+  margin-top:1rem;
 }
 
 .btn{
@@ -238,12 +263,14 @@ body {
   }
 
   border:2px solid black;
-  padding:2rem;
+  padding:1rem;
   text-align:center;
   display:inline-block;
-  font-size: 2rem;
+  font-size: 1.3rem;
   text-decoration:none;
   color:black;
+  margin-bottom:1rem;
+  margin-top:1rem;
 
 }
 
@@ -270,15 +297,6 @@ body {
   object-fit: cover;
   width:36rem;
   height:36rem;
-}
-
-figcaption{
-  text-align:center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color:black;
-  animation: fadeIn 500ms;
-  text-decoration:none;
 }
 
 
@@ -313,6 +331,11 @@ figcaption{
 }
 
 @media only screen and (max-width: 500px) and (orientation: portrait) {
+
+  html{
+    font-size: 30.3%;
+  }
+
   .popup__left{
     display:block;
   }
@@ -326,15 +349,9 @@ figcaption{
   }
 
   .teachers{
-    padding:1rem;
+    grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    padding:2rem;
   }
 
-  .teacher{
-    margin-right:1rem;
-  }
-
-  .teacher__tags-tag{
-    font-size: 1rem;
-  }
 
 }
