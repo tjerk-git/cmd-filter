@@ -30,9 +30,8 @@ module.exports = function (eleventyConfig) {
 
 
   eleventyConfig.addCollection("byName", function (collectionApi) {
-    return collectionApi.getAll().sort(function (a, b) {
-      //return a.date - b.date; // sort by date - ascending
-      return b.name - a.name; // sort by date - descending
+    return collectionApi.getFilteredByTag("teachers").sort(function (a, b) {
+      return b.name - a.name;
     });
   });
 
