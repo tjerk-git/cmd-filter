@@ -35,7 +35,7 @@ layout: layouts/base.njk
 </section>
 
 
-  {# <div id="{{teacher.data.slug}}" class="popup">
+  <div id="{{teacher.data.slug}}" class="popup">
     <div class="popup__content">
       <div class="popup__left">
         <img class="popup__img" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
@@ -43,13 +43,10 @@ layout: layouts/base.njk
       <div class="popup__right">
         <a href="#" class="popup__close">&times;</a>
         <h2 class="heading-secondary">{{teacher.data.name}}</h2>
-        <p class="popup__text">
-        {{teacher.data.description}}
-        </p>
 
         <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a>
       </div>
     </div>
-  </div> #}
+  </div>
 
 <script src="/bundle.js"></script>
