@@ -335,9 +335,9 @@ body {
 
 @media only screen and (max-width: 500px) and (orientation: portrait) {
 
-  html{
+  /* html{
     font-size: 30.3%; //16px 
-  }
+  } */
 
   .popup__left{
     display:block;
