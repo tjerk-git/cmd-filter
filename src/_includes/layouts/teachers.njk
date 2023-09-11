@@ -24,29 +24,31 @@ layout: layouts/base.njk
           <li class="teacher__tags-tag" data-tag="project">Stategy</li>
       </ul>
     </div>
-<section class="teachers">
-  {%- for teacher in collections.byName -%}
-    <div class="card" data-tags={{teacher.data.tags}}>
+<section class="teachers" id="teachers">
+  {%- for teacher in collections.teachers | sortByName -%}
+    <div class="card" data-tags={{teacher.data.tags}} data-slug={{teacher.data.slug}}>
       <img style="width:100%" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
       <h2 class="heading-secondary">{{teacher.data.name}}</h2>
       <p><a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a></p>
     </div>
-  {%- endfor -%}
-</section>
 
-
-  <div id="{{teacher.data.slug}}" class="popup">
+      <div id="{{teacher.data.slug}}" class="popup">
     <div class="popup__content">
       <div class="popup__left">
         <img class="popup__img" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
       </div>
       <div class="popup__right">
-        <a href="#" class="popup__close">&times;</a>
+        <a href="#teachers" class="popup__close">&times;</a>
         <h2 class="heading-secondary">{{teacher.data.name}}</h2>
-
+        <p class="popup__text">{{teacher.data.tags}}</p>
         <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a>
       </div>
     </div>
   </div>
+  {%- endfor -%}
+</section>
+
+
+
 
 <script src="/bundle.js"></script>

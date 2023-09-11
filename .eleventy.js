@@ -1,4 +1,19 @@
+
+function sortByName(values) {
+  return values.slice().sort((a, b) => a.data.name.localeCompare(b.data.name))
+}
+
+module.exports = (config) => {
+  config.addFilter('sortByName', sortByName)
+}
+
 module.exports = function (eleventyConfig) {
+
+
+
+
+  eleventyConfig.addFilter('sortByName', sortByName)
+
   eleventyConfig.setTemplateFormats([
     // Templates:
     "html",
@@ -29,11 +44,11 @@ module.exports = function (eleventyConfig) {
   // });
 
 
-  eleventyConfig.addCollection("byName", function (collectionApi) {
-    return collectionApi.getFilteredByTag("teachers").sort(function (a, b) {
-      return b.name - a.name;
-    });
-  });
+  // eleventyConfig.addCollection("byName", function (collectionApi) {
+  //   return collectionApi.getFilteredByTag("teachers").sort(function (a, b) {
+  //     return b.name - a.name;
+  //   });
+  // });
 
   // eleventyConfig.addCollection("teachers", function (collection) {
 

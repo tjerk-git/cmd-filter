@@ -5,13 +5,21 @@ const selectedTags = new Set();
 // Get a reference to the anchor element
 const anchor = document.getElementById("anchor");
 
+
+
+teachers.forEach(teacher => {
+  teacher.addEventListener('click', function (t) {
+    window.location.hash = this.getAttribute('data-slug');;
+  });
+});
+
 // Add an event listener for the "Escape" key press
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
 
     event.preventDefault();
 
-    window.location.hash = "#";
+    window.location.hash = "teachers";
   }
 });
 
