@@ -29,7 +29,7 @@ layout: layouts/base.njk
     <div class="card" data-tags={{teacher.data.tags}} data-slug={{teacher.data.slug}}>
       <img style="width:100%" src="public/images/{{teacher.data.image}}.jpeg" alt="{{teacher.data.name}}">
       <h2 class="heading-secondary">{{teacher.data.name}}</h2>
-      <p><a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a></p>
+      <p><a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact via Teams</a></p>
     </div>
 
       <div id="{{teacher.data.slug}}" class="popup">
@@ -41,7 +41,7 @@ layout: layouts/base.njk
         <a href="#teachers" class="popup__close">&times;</a>
         <h2 class="heading-secondary">{{teacher.data.name}}</h2>
         <p class="popup__text">{{teacher.data.tags}}</p>
-        <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact on Teams</a>
+        <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact via Teams</a>
       </div>
     </div>
   </div>
