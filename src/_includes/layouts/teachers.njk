@@ -5,25 +5,27 @@ layout: layouts/base.njk
     <h1 class="big-heading">CMD LWD PEOPLE</h1>
 </div>
 
-    <div class="row u-align-center">
-      <ul class="teacher__tags">
-          <li class="teacher__tags-tag" data-tag="coding">Coding</li>
-          <li class="teacher__tags-tag" data-tag="video">Video</li>
-          <li class="teacher__tags-tag" data-tag="audio">Audio</li>
-          <li class="teacher__tags-tag" data-tag="motion">Motion</li>
-          <li class="teacher__tags-tag" data-tag="game">Game</li>
-          <li class="teacher__tags-tag" data-tag="photography">Photography</li>
-          <li class="teacher__tags-tag" data-tag="content">Content</li>
-          <li class="teacher__tags-tag" data-tag="graphic">Graphic</li>
-          <li class="teacher__tags-tag" data-tag="brand">Brand</li>
-          <li class="teacher__tags-tag" data-tag="ux">User Experience</li>
-          <li class="teacher__tags-tag" data-tag="3d">3D</li>
-          <li class="teacher__tags-tag" data-tag="research">Design research</li>
-          <li class="teacher__tags-tag" data-tag="concept">Concept</li>
-          <li class="teacher__tags-tag" data-tag="ppo">Personal development</li>
-          <li class="teacher__tags-tag" data-tag="project">Stategy</li>
-      </ul>
-    </div>
+<div class="row u-align-center">
+  <ul class="teacher__tags">
+      <li class="teacher__tags-tag" data-tag="coding">Coding</li>
+      <li class="teacher__tags-tag" data-tag="video">Video</li>
+      <li class="teacher__tags-tag" data-tag="audio">Audio</li>
+      <li class="teacher__tags-tag" data-tag="motion">Motion</li>
+      <li class="teacher__tags-tag" data-tag="game">Game</li>
+      <li class="teacher__tags-tag" data-tag="photography">Photography</li>
+      <li class="teacher__tags-tag" data-tag="content">Content</li>
+      <li class="teacher__tags-tag" data-tag="graphic">Graphic</li>
+      <li class="teacher__tags-tag" data-tag="brand">Brand</li>
+      <li class="teacher__tags-tag" data-tag="ux">User Experience</li>
+      <li class="teacher__tags-tag" data-tag="3d">3D</li>
+      <li class="teacher__tags-tag" data-tag="research">Design research</li>
+      <li class="teacher__tags-tag" data-tag="concept">Concept</li>
+      <li class="teacher__tags-tag" data-tag="ppo">Personal development</li>
+      <li class="teacher__tags-tag" data-tag="project">Stategy</li>
+      <li class="teacher__tags-tag" data-tag="first-year">First year</li>
+  </ul>
+</div>
+
 <section class="teachers" id="teachers">
   {%- for teacher in collections.teachers | sortByName -%}
     <div class="card" data-tags={{teacher.data.tags}} data-slug={{teacher.data.slug}}>
