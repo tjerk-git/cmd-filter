@@ -339,9 +339,9 @@ body {
 
 @media only screen and (max-width: 500px) and (orientation: portrait) {
 
-  /* html{
-    font-size: 30.3%; //16px 
-  } */
+  html{
+    font-size: 50.3%; //16px 
+  }
 
   .popup__left{
     display:block;
@@ -359,6 +359,5 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     padding:2rem;
   }
-
 
 }
