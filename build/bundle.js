@@ -4,7 +4,15 @@ const selectedTags = new Set();
 
 // Get a reference to the anchor element
 const anchor = document.getElementById("anchor");
+const teachers_div = document.getElementById("teachers");
+const loader = document.getElementById("loader");
 
+window.onload = function () {
+  setTimeout(function () {
+    teachers_div.style.opacity = "100";
+    loader.style.display = "none";
+  }, 500);
+};
 
 
 teachers.forEach(teacher => {

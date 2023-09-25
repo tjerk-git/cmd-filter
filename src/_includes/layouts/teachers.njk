@@ -30,8 +30,11 @@ layout: layouts/base.njk
     <li class="teacher__tags-tag" data-tag="ux">UX</li>  
 </ul>
 </div>
-
+<div class="loader-container">
+  <div class="lds-grid" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>
 <section class="teachers" id="teachers">
+
   {%- for teacher in collections.teachers | sortByName -%}
     <div class="card" data-tags={{teacher.data.tags}} data-slug={{teacher.data.slug}}>
       <img style="width:100%" src="public/images/{{teacher.data.image}}.webp" alt="{{teacher.data.name}}">
