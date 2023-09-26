@@ -1,4 +1,5 @@
 const tags = document.querySelectorAll('.teacher__tags-tag');
+const closeButtons = document.querySelectorAll('.popup__close');
 const teachers = document.querySelectorAll('.card');
 const selectedTags = new Set();
 
@@ -18,19 +19,35 @@ window.onload = function () {
 
 teachers.forEach(teacher => {
   teacher.addEventListener('click', function (t) {
-    window.location.hash = this.getAttribute('data-slug');;
+
+
+    let popup = document.getElementById(this.getAttribute('data-slug'));
+
+    popup.style.opacity = "1";
+    popup.style.visibility = "visible";
   });
 });
 
-// Add an event listener for the "Escape" key press
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
+closeButtons.forEach(closeButton => {
+  closeButton.addEventListener('click', function (t) {
 
-    event.preventDefault();
+    let popup = document.getElementById(this.getAttribute('data-slug'));
 
-    window.location.hash = "teachers";
-  }
-});
+    console.log(popup);
+    popup.style.opacity = "0";
+    popup.style.visibility = "hidden";
+  });
+})
+
+// // Add an event listener for the "Escape" key press
+// document.addEventListener("keydown", function (event) {
+//   if (event.key === "Escape") {
+
+//     event.preventDefault();
+
+//     window.location.hash = "teachers";
+//   }
+// });
 
 tags.forEach(tag => {
   tag.addEventListener('click', () => {

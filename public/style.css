@@ -283,22 +283,22 @@ body {
 }
 
 .popup__close{
-  &:link, &:visited{
     color: white;
     position: absolute;
     top: 2.5rem;
     right: 2.5rem;
     font-size: 3rem;
     text-decoration: none;
-    display: block;
+    border:none;
     transition: all .2s;
-    line-height: 1;
     background: black;
     border-radius: 50%;
     width: 4rem;
     height: 4rem;
     text-align:center;
-  }
+    display:flex;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .popup__img{
