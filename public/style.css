@@ -69,6 +69,29 @@ body {
   }
 }
 
+.buttons--container{
+  margin:0 auto;
+  max-width: 114rem;
+  text-align:right;
+  margin-bottom:1.4rem;
+}
+
+.buttons--container button{
+  background:none;
+  border:none;
+  margin-right:1.4rem;
+  cursor:pointer;
+}
+
+.hidden{
+  display:none;
+}
+
+.buttons--image{
+  width:32px;
+}
+
+
 .teachers{
   max-width: 114rem;
   display: grid;

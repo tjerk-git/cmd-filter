@@ -2,6 +2,8 @@ const tags = document.querySelectorAll('.teacher__tags-tag');
 const closeButtons = document.querySelectorAll('.popup__close');
 const teachers = document.querySelectorAll('.card');
 const selectedTags = new Set();
+const btnAlfabet = document.getElementById('sortAlfabet');
+const btnRandom = document.getElementById('sortRandom');
 
 // Get a reference to the anchor element
 const anchor = document.getElementById("anchor");
@@ -16,6 +18,55 @@ window.onload = function () {
   }, 900);
 };
 
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+}
+
+
+btnAlfabet.addEventListener('click', function () {
+
+  let sortImage = document.querySelectorAll('.alfabetSort');
+
+  sortImage.forEach(image => {
+    if (image.classList.contains('hidden')) {
+      image.classList.remove('hidden');
+    } else {
+      image.classList.add('hidden');
+    }
+  })
+
+  let teachersSelection = document.querySelectorAll('.card');
+  let teacherArray = Array.from(teachersSelection);
+
+  // Step 3: Rearrange the order of the elements (for example, reverse order)
+  teacherArray.reverse();
+
+  // Step 4: Append the elements back to their parent container in the new order
+  let parentContainer = document.getElementById("teachers"); // Change this to your actual parent container
+  teacherArray.forEach(teacherDiv => {
+    parentContainer.appendChild(teacherDiv);
+  });
+})
+
+btnRandom.addEventListener('click', function () {
+  let teachersSelection = document.querySelectorAll('.card');
+  let teacherArray = Array.from(teachersSelection);
+
+  let shuffled = teacherArray
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+
+  let parentContainer = document.getElementById("teachers"); // Change this to your actual parent container
+  shuffled.forEach(teacherDiv => {
+    parentContainer.appendChild(teacherDiv);
+  });
+})
 
 teachers.forEach(teacher => {
   teacher.addEventListener('click', function (t) {
