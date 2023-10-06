@@ -78,6 +78,7 @@ teachers.forEach(teacher => {
   element.innerHTML = "";
 
   content.forEach(tag => {
+    if (tag == " teachers") return;
     var div = document.createElement('div');
     div.classList.add('teacher__tags-smaller-tag');
     div.innerHTML = `${tag}`;
