@@ -18,6 +18,8 @@ window.onload = function () {
   }, 900);
 };
 
+
+
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -69,8 +71,21 @@ btnRandom.addEventListener('click', function () {
 })
 
 teachers.forEach(teacher => {
-  teacher.addEventListener('click', function (t) {
 
+  var element = document.getElementById(teacher.getAttribute('data-slug') + '-tags');
+  var content = element.innerHTML.split(',');
+
+  element.innerHTML = "";
+
+  content.forEach(tag => {
+    var div = document.createElement('div');
+    div.classList.add('teacher__tags-smaller-tag');
+    div.innerHTML = `${tag}`;
+    element.appendChild(div);
+  })
+
+
+  teacher.addEventListener('click', function (t) {
 
     let popup = document.getElementById(this.getAttribute('data-slug'));
 
@@ -90,15 +105,6 @@ closeButtons.forEach(closeButton => {
   });
 })
 
-// // Add an event listener for the "Escape" key press
-// document.addEventListener("keydown", function (event) {
-//   if (event.key === "Escape") {
-
-//     event.preventDefault();
-
-//     window.location.hash = "teachers";
-//   }
-// });
 
 tags.forEach(tag => {
   tag.addEventListener('click', () => {
