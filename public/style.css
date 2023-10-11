@@ -278,6 +278,7 @@ body {
   margin-bottom: 2rem;
   margin-top:2rem;
   display:inine-block;
+  max-width:40rem;
 }
 
 .popup__left{
