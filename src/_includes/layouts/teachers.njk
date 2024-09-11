@@ -48,19 +48,24 @@ layout: layouts/base.njk
       <p><a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact via Teams</a></p>
     </div>
 
-      <div id="{{teacher.data.slug}}" class="popup">
+      <dialog id="{{teacher.data.slug}}">
+
+
     <div class="popup__content">
       <div class="popup__left">
         <img class="popup__img" src="public/images/{{teacher.data.image}}.webp" alt="{{teacher.data.name}}">
       </div>
       <div class="popup__right">
-        <button class="popup__close" data-slug="{{teacher.data.slug}}" aria-label="close">&times;</button>
+        <button autofocus class="popup__close" data-slug="{{teacher.data.slug}}" aria-label="close">&times;</button>
         <h2 class="heading-secondary">{{teacher.data.name}}</h2>
         <p class="popup__text" id="{{teacher.data.slug}}-tags"> {{teacher.data.tags}}</p>
         <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" aria-label="contact via Teams" class="btn btn--blue">Contact via Teams</a>
       </div>
-    </div>
-  </div>
+        </div>
+    </dialog>
+
+    
+
   {%- endfor -%}
 </section>
 

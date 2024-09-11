@@ -75,6 +75,13 @@ teachers.forEach(teacher => {
   var element = document.getElementById(teacher.getAttribute('data-slug') + '-tags');
   var content = element.innerHTML.split(',');
 
+  // add on click to element open dialog with matching id
+  teacher.addEventListener('click', () => {
+    // get dialog with matching id
+    let dialog = document.getElementById(teacher.getAttribute('data-slug'));
+    dialog.showModal();
+  });
+
   element.innerHTML = "";
 
   content.forEach(tag => {
@@ -85,26 +92,16 @@ teachers.forEach(teacher => {
     element.appendChild(div);
   })
 
-
-  teacher.addEventListener('click', function (t) {
-
-    let popup = document.getElementById(this.getAttribute('data-slug'));
-
-    popup.style.opacity = "1";
-    popup.style.visibility = "visible";
-  });
 });
 
+// all button with popup__close class add event listener to close dialog
 closeButtons.forEach(closeButton => {
-  closeButton.addEventListener('click', function (t) {
-
-    let popup = document.getElementById(this.getAttribute('data-slug'));
-
-    console.log(popup);
-    popup.style.opacity = "0";
-    popup.style.visibility = "hidden";
+  closeButton.addEventListener('click', () => {
+    // find the dialog with matching id
+    let dialog = closeButton.closest('dialog');
+    dialog.close();
   });
-})
+});
 
 
 tags.forEach(tag => {
