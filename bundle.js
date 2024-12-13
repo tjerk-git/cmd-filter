@@ -9,12 +9,12 @@ const btnRandom = document.getElementById('sortRandom');
 const anchor = document.getElementById("anchor");
 
 const teachers_div = document.getElementById("teachers");
-const loader = document.getElementById("loader");
+//const loader = document.getElementById("loader");
 
 window.onload = function () {
   setTimeout(function () {
     teachers_div.style.opacity = "100";
-    loader.style.display = "none";
+    //loader.style.display = "none";
   }, 900);
 };
 

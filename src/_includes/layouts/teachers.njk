@@ -5,6 +5,8 @@ layout: layouts/base.njk
     <h1 class="big-heading">CMD PEOPLE</h1>
 </div>
 
+
+
 <div class="row u-align-center">
   <ul class="teacher__tags">
     <li class="teacher__tags-tag" data-tag="3d">3D</li>
@@ -32,8 +34,11 @@ layout: layouts/base.njk
     <li class="teacher__tags-tag" data-tag="first">First Year</li>
 </ul>
 </div>
-<div class="loader-container">
-  <div class="lds-grid" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+<div class="row u-align-center">
+  <div class="search-container">
+    <input type="text" id="teacherSearch" class="teacher-search" placeholder="Search teachers..." aria-label="Search teachers">
+  </div>
 </div>
 
 <div class="buttons--container">
@@ -71,5 +76,24 @@ layout: layouts/base.njk
 
 
 
+
+<script>
+
+  const searchInput = document.getElementById('teacherSearch');
+
+  searchInput.addEventListener('input', (e) => {
+    const value = e.target.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card) => {
+      const name = card.dataset.slug;
+      if (name.includes(value)) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+
+</script>
 
 <script src="/bundle.js"></script>

@@ -1,0 +1,25 @@
+.search-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.teacher-search {
+    width: 100%;
+    padding-top:1rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-bottom:1rem;
+    font-size: 2em;
+    border: 2px solid #000;
+    transition: border-color 0.3s ease;
+}
+
+.teacher-search:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.teacher-search::placeholder {
+    color: #999;
+}
