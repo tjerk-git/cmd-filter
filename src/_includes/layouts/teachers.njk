@@ -30,7 +30,7 @@ layout: layouts/base.njk
     <li class="teacher__tags-tag" data-tag="story">Story</li>
     <li class="teacher__tags-tag" data-tag="strategy">Strategy</li>
     <li class="teacher__tags-tag" data-tag="tacticle">Tactile</li>
-    <li class="teacher__tags-tag" data-tag="ux">UX</li>  
+    <li class="teacher__tags-tag" data-tag="ux">UX</li>
     <li class="teacher__tags-tag" data-tag="first">First Year</li>
 </ul>
 </div>
@@ -65,11 +65,18 @@ layout: layouts/base.njk
         <h2 class="heading-secondary">{{teacher.data.name}}</h2>
         <p class="popup__text" id="{{teacher.data.slug}}-tags"> {{teacher.data.tags}}</p>
         <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" aria-label="contact via Teams" class="btn btn--blue">Contact via Teams</a>
+        <p><button data-audio="{{teacher.data.slug}}" class="btn btn--blue btn-pronounce">
+        <img src="public/images/pronounce.svg" alt="Pronounce">
+        Pronounce this name for me</button></p>
+
+        <audio class="audio_{{teacher.data.slug}}" src="public/audio/{{teacher.data.slug}}.mp3" controls>
+          Your browser does not support the audio element.
+        </audio>
       </div>
         </div>
     </dialog>
 
-    
+
 
   {%- endfor -%}
 </section>

@@ -1,18 +1,13 @@
-
 function sortByName(values) {
-  return values.slice().sort((a, b) => a.data.name.localeCompare(b.data.name))
+  return values.slice().sort((a, b) => a.data.name.localeCompare(b.data.name));
 }
 
 module.exports = (config) => {
-  config.addFilter('sortByName', sortByName)
-}
+  config.addFilter("sortByName", sortByName);
+};
 
 module.exports = function (eleventyConfig) {
-
-
-
-
-  eleventyConfig.addFilter('sortByName', sortByName)
+  eleventyConfig.addFilter("sortByName", sortByName);
 
   eleventyConfig.setTemplateFormats([
     // Templates:
@@ -30,11 +25,16 @@ module.exports = function (eleventyConfig) {
   //   return collection.filter(post => post.url !== pageUrl);
   // });
 
-  eleventyConfig.addFilter("filterByTags", function (collection = [], ...requiredTags) {
-    return collection.filter(post => {
-      return requiredTags.flat().every(tag => post.data.tags?.includes(tag));
-    });
-  });
+  eleventyConfig.addFilter(
+    "filterByTags",
+    function (collection = [], ...requiredTags) {
+      return collection.filter((post) => {
+        return requiredTags
+          .flat()
+          .every((tag) => post.data.tags?.includes(tag));
+      });
+    },
+  );
 
   // eleventyConfig.addNunjucksFilter("related", function (collection = []) {
   //   const { tags: requiredTags, page } = this.ctx;
@@ -42,7 +42,6 @@ module.exports = function (eleventyConfig) {
   //     return post.url !== page.url && requiredTags?.every(tag => post.data.tags?.includes(tag));
   //   });
   // });
-
 
   // eleventyConfig.addCollection("byName", function (collectionApi) {
   //   return collectionApi.getFilteredByTag("teachers").sort(function (a, b) {
@@ -70,7 +69,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
       includes: "_includes",
-      output: "_site"
-    }
+      output: "_site",
+    },
   };
 };

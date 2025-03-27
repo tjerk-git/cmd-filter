@@ -287,6 +287,10 @@ body {
   display: table-cell;
 }
 
+audio{
+    display: none;
+}
+
 .popup__right {
   width: 66.666667%;
   display: table-cell;
@@ -300,6 +304,13 @@ body {
   display: inline-block;
   margin-top: 1rem;
 }
+
+.btn-pronounce {
+    display:flex!important;
+    align-items:center;
+    gap:1rem;
+}
+
 
 .btn {
 
@@ -403,7 +414,7 @@ body {
 @media only screen and (max-width: 600px) and (orientation: portrait) {
 
   html {
-    font-size: 50.3%; //16px 
+    font-size: 50.3%; //16px
   }
 
   .popup__left {
