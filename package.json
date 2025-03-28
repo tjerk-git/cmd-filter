@@ -25,8 +25,7 @@
     "to-regex-range": "^5.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "eleventy --serve",
+    "install": "node -e \"if (process.platform !== 'darwin') { process.exit(0) }\" || npm install fsevents",
     "build": "eleventy"
   },
   "repository": {
