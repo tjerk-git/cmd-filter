@@ -4,8 +4,6 @@ const teachers = document.querySelectorAll(".card");
 const selectedTags = new Set();
 const btnAlfabet = document.getElementById("sortAlfabet");
 const btnRandom = document.getElementById("sortRandom");
-const audioPlayer = document.getElementById("audioPlayer");
-const pronounceButtons = document.querySelectorAll(".btn-pronounce");
 
 // Get a reference to the anchor element
 const anchor = document.getElementById("anchor");
@@ -28,15 +26,6 @@ function shuffleArray(array) {
     array[j] = temp;
   }
 }
-
-pronounceButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    const audioSrc = this.dataset.audio;
-    const audioPlayer = document.querySelector(`.audio_${audioSrc}`);
-
-    audioPlayer.play();
-  });
-});
 
 btnAlfabet.addEventListener("click", function () {
   let sortImage = document.querySelectorAll(".alfabetSort");
