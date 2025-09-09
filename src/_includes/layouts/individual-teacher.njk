@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="row u-align-center">
+  <div class="individual-teacher">
+    <div class="teacher-profile">
+      <img src="/public/images/{{ image }}.webp" alt="{{ name }}" class="teacher-image">
+      <div class="teacher-info">
+        <h1 class="heading-primary">{{ name }}</h1>
+        <div class="teacher-tags">
+          {%- for tag in tags -%}
+            <span class="tag">{{ tag }}</span>
+          {%- endfor -%}
+        </div>
+        <p>
+          <a href="https://teams.microsoft.com/l/chat/0/0?users={{ email }}" class="btn btn--blue">Contact via Teams</a>
+        </p>
+        <p>
+          <a href="/" class="btn btn--secondary">← Back to all teachers</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.individual-teacher {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.teacher-profile {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.teacher-image {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.teacher-info {
+  flex: 1;
+}
+
+.teacher-tags {
+  margin: 1rem 0;
+}
+
+.tag {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .teacher-profile {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .teacher-image {
+    width: 200px;
+    align-self: center;
+  }
+}
+</style>
