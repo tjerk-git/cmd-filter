@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="CMDLWD PEOPLE" />
-    <link rel="stylesheet" type="text/css" href="/public/style.css" />
-    <link rel="stylesheet" type="text/css" href="/public/css/search.css" />
-    <meta property="og:title" content="CMD PEOPLE" />
-    <meta property="og:description" content="Meet the CMD LWD People" />
-    <meta property="og:image" content="public/images/cmdpeople.png" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="CMDLWD PEOPLE"/>
+    <link rel="stylesheet" type="text/css" href="/public/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/public/css/search.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
+    <meta property="og:title" content="CMD PEOPLE"/>
+    <meta property="og:description" content="Meet the CMD LWD People"/>
+    <meta property="og:image" content="public/images/cmdpeople.png"/>
     <link rel="apple-touch-icon" sizes="180x180" href="public/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="public/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="public/images/favicon-16x16.png">
@@ -17,8 +23,22 @@
   </head>
   <body>
     <main>
+      <div class="row">
+        <div class="switch-buttons">
+          <a href="/" class="switch-button{% if page.url == '/' %} switch-button--active{% endif %}" aria-label="View People">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            <span>People</span>
+          </a>
+          <a
+            href="/clubs"
+            class="switch-button{% if page.url == '/clubs/' or page.url == '/clubs.html' %} switch-button--active{% endif %}"
+            aria-label="View Clubs">
+            <i class="fa-solid fa-icons" aria-hidden="true"></i>
+            <span>Clubs</span>
+          </a>
+        </div>
+      </div>
       {{ content | safe }}
     </main>
-   
   </body>
 </html>

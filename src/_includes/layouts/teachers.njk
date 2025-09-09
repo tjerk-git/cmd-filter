@@ -1,11 +1,6 @@
 ---
 layout: layouts/base.njk
 ---
-<div class="row">
-    <h1 class="big-heading">CMD PEOPLE</h1>
-</div>
-
-
 
 <div class="row u-align-center">
   <ul class="teacher__tags">
@@ -32,69 +27,67 @@ layout: layouts/base.njk
     <li class="teacher__tags-tag" data-tag="tacticle">Tactile</li>
     <li class="teacher__tags-tag" data-tag="ux">UX</li>
     <li class="teacher__tags-tag" data-tag="first">First Year</li>
-</ul>
+  </ul>
 </div>
-
 <div class="row u-align-center">
   <div class="search-container">
-    <input type="text" id="teacherSearch" class="teacher-search" placeholder="Search teachers..." aria-label="Search teachers">
+    <input
+      type="text"
+      id="teacherSearch"
+      class="teacher-search"
+      placeholder="Search teachers..."
+      aria-label="Search teachers"></div>
   </div>
-</div>
-
-<div class="buttons--container">
-  <button aria-label="sort by alfabet" id="sortAlfabet"><img class="buttons--image alfabetSort" src="public/images/a-z.png"><img class="buttons--image alfabetSort hidden" src="public/images/z-a.png"></button>
-  <button aria-label="sort random" id="sortRandom"><img class="buttons--image" src="public/images/shuffle.png"></button>
-</div>
-<section class="teachers" id="teachers">
-  {%- for teacher in collections.teachers | sortByName -%}
-    <div class="card" data-tags={{teacher.data.tags}} data-slug={{teacher.data.slug}}>
-      <img style="width:100%" src="public/images/{{teacher.data.image}}.webp" alt="{{teacher.data.name}}">
-      <h2 class="heading-secondary">{{teacher.data.name}}</h2>
-      <p><a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" class="btn btn--blue">Contact via Teams</a></p>
-    </div>
-
-      <dialog id="{{teacher.data.slug}}">
-
-
-    <div class="popup__content">
-      <div class="popup__left">
-        <img class="popup__img" src="public/images/{{teacher.data.image}}.webp" alt="{{teacher.data.name}}">
-      </div>
-      <div class="popup__right">
-        <button autofocus class="popup__close" data-slug="{{teacher.data.slug}}" aria-label="close">&times;</button>
-        <h2 class="heading-secondary">{{teacher.data.name}}</h2>
-        <p class="popup__text" id="{{teacher.data.slug}}-tags"> {{teacher.data.tags}}</p>
-        <a href="https://teams.microsoft.com/l/chat/0/0?users={{teacher.data.email}}" aria-label="contact via Teams" class="btn btn--blue">Contact via Teams</a>
-
-      </div>
+  <div class="buttons--container">
+    <button aria-label="sort by alfabet" id="sortAlfabet">
+      <img class="buttons--image alfabetSort" src="public/images/a-z.png">
+        <img class="buttons--image alfabetSort hidden" src="public/images/z-a.png"></button>
+        <button aria-label="sort random" id="sortRandom">
+          <img class="buttons--image" src="public/images/shuffle.png"></button>
         </div>
-    </dialog>
-
-
-
-  {%- endfor -%}
-</section>
-
-
-
-
-<script>
-
-  const searchInput = document.getElementById('teacherSearch');
-
-  searchInput.addEventListener('input', (e) => {
-    const value = e.target.value.toLowerCase();
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card) => {
-      const name = card.dataset.slug;
-      if (name.includes(value)) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  });
-
-</script>
-
-<script src="/bundle.js"></script>
+        <section class="teachers" id="teachers">
+          {%- for teacher in collections.teachers | sortByName -%}
+            <div class="card" data-tags={{ teacher.data.tags }} data-slug={{ teacher.data.slug }}>
+              <img style="width:100%" src="public/images/{{ teacher.data.image }}.webp" alt="{{ teacher.data.name }}">
+                <h2 class="heading-secondary">{{ teacher.data.name }}</h2>
+                <p>
+                  <a href="https://teams.microsoft.com/l/chat/0/0?users={{ teacher.data.email }}" class="btn btn--blue">Contact via Teams</a>
+                </p>
+              </div>
+              <dialog id="{{ teacher.data.slug }}">
+                <div class="popup__content">
+                  <div class="popup__left">
+                    <img class="popup__img" src="public/images/{{ teacher.data.image }}.webp" alt="{{ teacher.data.name }}"></div>
+                    <div class="popup__right">
+                      <button autofocus class="popup__close" data-slug="{{ teacher.data.slug }}" aria-label="close">&times;</button>
+                      <h2 class="heading-secondary">{{ teacher.data.name }}</h2>
+                      <p class="popup__text" id="{{ teacher.data.slug }}-tags">
+                        {{ teacher.data.tags }}</p>
+                      <a
+                        href="https://teams.microsoft.com/l/chat/0/0?users={{ teacher.data.email }}"
+                        aria-label="contact via Teams"
+                        class="btn btn--blue">Contact via Teams</a>
+                    </div>
+                  </div>
+                </dialog>
+              {%- endfor -%}
+            </section>
+            <script>
+              const searchInput = document.getElementById('teacherSearch');
+              searchInput.addEventListener('input', (e) => {
+                const value = e
+                  .target
+                  .value
+                  .toLowerCase();
+                const cards = document.querySelectorAll('.card');
+                cards.forEach((card) => {
+                  const name = card.dataset.slug;
+                  if (name.includes(value)) {
+                    card.classList.remove('hidden');
+                  } else {
+                    card.classList.add('hidden');
+                  }
+                });
+              });
+            </script>
+            <script src="/bundle.js"></script>
