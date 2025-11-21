@@ -271,6 +271,15 @@ body {
   align-items: center;
 }
 
+.add-club-btn:hover {
+  background-color: #333 !important;
+  transform: scale(1.02);
+}
+
+.add-club-btn:active {
+  transform: scale(0.98);
+}
+
 .breadcrumb {
   display: inline-flex;
   align-items: center;
